@@ -1,4 +1,8 @@
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+let rawBase = (import.meta.env.VITE_API_URL || "http://localhost:5000/api").trim().replace(/\/+$/, "");
+if (!rawBase.endsWith("/api")) {
+  rawBase += "/api";
+}
+const API_BASE = rawBase;
 
 export async function apiClient(endpoint, options = {}) {
   const url = `${API_BASE}${endpoint}`;
