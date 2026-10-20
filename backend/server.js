@@ -47,6 +47,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(logger);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Course Enrollment & Batch Management API!");
+});
+
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     success: true,
