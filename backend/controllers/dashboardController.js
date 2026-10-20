@@ -20,7 +20,7 @@ exports.getDashboardStats = async (req, res, next) => {
 
     const totalStudents = await User.countDocuments({ role: "student" });
 
-    // Find the most popular course by counting active enrollments
+
     const activeEnrollments = await Enrollment.find({ status: "Active" }).populate({
       path: "batch",
       select: "course"

@@ -23,7 +23,7 @@ exports.enrollInBatch = async (req, res, next) => {
       });
     }
 
-    // Business rule: A student cannot enroll in the same course twice, even across different batches
+
     const courseBatches = await Batch.find({ course: batch.course }).select("_id");
     const courseBatchIds = courseBatches.map((b) => b._id);
 

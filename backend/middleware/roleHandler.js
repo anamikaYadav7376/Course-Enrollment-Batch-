@@ -1,4 +1,3 @@
-// Middleware generator to restrict endpoint access to specific roles (e.g. 'admin' or 'student')
 const allowRoles = (...allowedRoles) => {
   return (req, res, next) => {
     if (!req.user || !req.user.role) {

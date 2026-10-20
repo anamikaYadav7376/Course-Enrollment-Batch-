@@ -1,4 +1,3 @@
-// Centralized error-handling middleware that maps Mongoose errors to clean HTTP status codes
 const errorHandler = (err, req, res, next) => {
   console.error("Error occurred:", err.name, err.message);
 

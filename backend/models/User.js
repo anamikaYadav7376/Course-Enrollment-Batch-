@@ -37,7 +37,6 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// Automatically hash password using bcrypt before saving user to database
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
   try {
